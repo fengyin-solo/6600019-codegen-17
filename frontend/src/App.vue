@@ -34,6 +34,9 @@
         </button>
       </div>
 
+      <!-- Waveform Quality -->
+      <QualityPanel :quality="store.quality" />
+
       <!-- Picks -->
       <div class="bg-gray-800 rounded-xl p-3">
         <h3 class="text-cyan-300 font-bold text-sm mb-2">震相拾取结果</h3>
@@ -79,6 +82,7 @@
 <script setup lang="ts">
 import { useSeismicStore } from './store/seismic'
 import WaveformChart from './components/WaveformChart.vue'
+import QualityPanel from './components/QualityPanel.vue'
 
 const store = useSeismicStore()
 

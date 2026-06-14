@@ -24,3 +24,22 @@ class SeismicEvent(BaseModel):
     depth: float
     origin_time: str
     location: str
+
+
+class QualityIssue(BaseModel):
+    code: str
+    severity: str  # 'low', 'medium', 'high', 'critical'
+    description: str
+    suggestion: Optional[str] = None
+
+
+class WaveformQuality(BaseModel):
+    overall_score: float
+    grade: str  # 'A', 'B', 'C', 'D', 'F'
+    usability: str  # 'excellent', 'good', 'fair', 'poor', 'unusable'
+    snr: float
+    noise_level: float
+    data_completeness: float
+    amplitude_range: float
+    clip_ratio: float
+    issues: List[QualityIssue]
